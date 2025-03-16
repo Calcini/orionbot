@@ -16,36 +16,18 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column;
         }
 
         .container {
             width: 90%;
-            max-width: 400px; /* Define limite para telas menores */
+            max-width: 400px;
             padding: 20px;
             background: rgba(15, 23, 42, 0.95);
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 255, 100, 0.8);
             text-align: center;
-        }
-
-        /* Estilo dos banners */
-        .banners {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .banners img {
-            width: 45%;
-            max-width: 180px;
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .banners img:hover {
-            transform: scale(1.1);
+            position: relative;
         }
 
         /* Estilo do robô */
@@ -120,16 +102,36 @@
             box-shadow: inset 0 0 10px rgba(0, 255, 100, 0.3);
         }
 
+        /* Estilos dos banners */
+        .banners {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .banners a {
+            width: 30%;
+            max-width: 120px;
+            display: block;
+        }
+
+        .banners img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .banners img:hover {
+            transform: scale(1.1);
+        }
+
         /* Estilos responsivos */
         @media (max-width: 768px) {
             .container {
                 width: 95%;
                 max-width: 360px;
-            }
-
-            .banners img {
-                width: 70%;
-                max-width: 160px;
             }
 
             .logo {
@@ -155,22 +157,16 @@
                 font-size: 14px;
                 height: 160px;
             }
+
+            .banners a {
+                width: 45%;
+                max-width: 140px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        
-        <!-- BANNERS DE INÍCIO -->
-        <div class="banners">
-            <a href="https://www.instagram.com/sizaconcept/" target="_blank">
-                <img src="{{ url_for('static', filename='siza_banner.jpg') }}" alt="Siza Concept">
-            </a>
-            <a href="https://www.instagram.com/academiauniversaloficial/" target="_blank">
-                <img src="{{ url_for('static', filename='academia_banner.jpg') }}" alt="Academia Universal">
-            </a>
-        </div>
-
         <div class="logo"></div> 
         <h1>OrionBot</h1>
         <p>Digite sua pergunta:</p>
@@ -181,6 +177,19 @@
         <div class="resposta-container">
             <p><strong>Resposta:</strong></p>
             <p>{{ resposta }}</p>
+        </div>
+
+        <!-- BANNERS ABAIXO DA RESPOSTA -->
+        <div class="banners">
+            <a href="https://www.instagram.com/sizaconcept/" target="_blank">
+                <img src="{{ url_for('static', filename='siza_banner.jpg') }}" alt="Siza Concept">
+            </a>
+            <a href="https://www.instagram.com/academiauniversaloficial/" target="_blank">
+                <img src="{{ url_for('static', filename='academia_banner.jpg') }}" alt="Academia Universal">
+            </a>
+            <a href="https://galaxystar.games" target="_blank">
+                <img src="{{ url_for('static', filename='galaxy_star_banner.jpg') }}" alt="Raiders of Water">
+            </a>
         </div>
     </div>
 </body>
