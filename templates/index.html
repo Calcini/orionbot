@@ -28,6 +28,26 @@
             text-align: center;
         }
 
+        /* Estilo dos banners */
+        .banners {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .banners img {
+            width: 45%;
+            max-width: 180px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .banners img:hover {
+            transform: scale(1.1);
+        }
+
         /* Estilo do robô */
         .logo {
             width: 100px;
@@ -107,6 +127,11 @@
                 max-width: 360px;
             }
 
+            .banners img {
+                width: 70%;
+                max-width: 160px;
+            }
+
             .logo {
                 width: 80px;
                 height: 80px;
@@ -135,6 +160,17 @@
 </head>
 <body>
     <div class="container">
+        
+        <!-- BANNERS DE INÍCIO -->
+        <div class="banners">
+            <a href="https://www.instagram.com/sizaconcept/" target="_blank">
+                <img src="{{ url_for('static', filename='siza_banner.jpg') }}" alt="Siza Concept">
+            </a>
+            <a href="https://www.instagram.com/academiauniversaloficial/" target="_blank">
+                <img src="{{ url_for('static', filename='academia_banner.jpg') }}" alt="Academia Universal">
+            </a>
+        </div>
+
         <div class="logo"></div> 
         <h1>OrionBot</h1>
         <p>Digite sua pergunta:</p>
