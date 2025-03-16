@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrionBot</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #0F172A, #1E293B);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 50%;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 100, 0.8);
+            text-align: center;
+        }
+
+        /* Estilo do robô */
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: url('https://cdn-icons-png.flaticon.com/512/4712/4712139.png') no-repeat center;
+            background-size: contain;
+            margin: auto;
+            animation: flutuar 3s infinite ease-in-out, pulsar 1.5s infinite alternate;
+        }
+
+        /* Animação de flutuação */
+        @keyframes flutuar {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Animação de pulsação */
+        @keyframes pulsar {
+            0% { opacity: 0.8; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.05); }
+        }
+
+        h1 {
+            color: #00FF64;
+            font-size: 28px;
+            margin-top: 10px;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #334155;
+            color: white;
+            outline: none;
+        }
+
+        button {
+            background-color: #00FF64;
+            color: black;
+            padding: 12px 20px;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            background-color: #00DD50;
+        }
+
+        .resposta-container {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+            color: #E2E8F0;
+            font-size: 18px;
+            height: 200px; 
+            overflow-y: auto; 
+            box-shadow: inset 0 0 10px rgba(0, 255, 100, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo"></div> 
+        <h1>OrionBot</h1>
+        <p>Digite sua pergunta:</p>
+        <form method="post">
+            <input type="text" name="pergunta" required>
+            <button type="submit">Enviar</button>
+        </form>
+        <div class="resposta-container">
+            <p><strong>Resposta:</strong></p>
+            <p>{{ resposta }}</p>
+        </div>
+    </div>
+</body>
+</html>
