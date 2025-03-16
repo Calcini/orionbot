@@ -15,7 +15,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             flex-direction: column;
         }
 
@@ -59,8 +59,16 @@
             margin-top: 10px;
         }
 
-        input[type="text"] {
+        /* Ajuste da caixa de pergunta */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
+        }
+
+        input[type="text"] {
+            width: 90%;
             padding: 12px;
             border: none;
             border-radius: 5px;
@@ -69,11 +77,11 @@
             color: white;
             outline: none;
             margin-top: 10px;
-            display: block;
+            text-align: center;
         }
 
         button {
-            width: 100%;
+            width: 90%;
             background-color: #00FF64;
             color: black;
             padding: 12px;
@@ -185,7 +193,7 @@
             <a href="https://www.instagram.com/sizaconcept/" target="_blank">
                 <img src="{{ url_for('static', filename='siza_banner.jpg') }}" alt="Siza Concept">
             </a>
-            <a href="https://www.instagram.com/academiauniversaloficial/" target="_blank">
+            <a href="https://www.instagram.com/academiauniversalrp/" target="_blank">
                 <img src="{{ url_for('static', filename='academia_banner.jpg') }}" alt="Academia Universal">
             </a>
             <a href="https://galaxystar.games" target="_blank">
